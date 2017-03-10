@@ -122,6 +122,7 @@ public class TechJobs {
                         System.out.println(key+": "+i.get(key));
 
                 }
+                System.out.println("*****");
                 //System.out.println("*****");
                 //System.out.println("position type: "+i.get("position type"));
                 //System.out.println("name: "+i.get("name"));
