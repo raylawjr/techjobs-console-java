@@ -52,7 +52,7 @@ public class TechJobs {
                 }
 
             } else { // choice is "search"
-
+//calling findbyValue from "Somewhere in main" ********************************************************************
                 // How does the user want to search (e.g. by skill or employer)
                 String searchField = getUserSelection("Search by:", columnChoices);
 
@@ -61,7 +61,8 @@ public class TechJobs {
                 String searchTerm = in.nextLine();
 
                 if (searchField.equals("all")) {
-                    System.out.println("Search all fields not yet implemented.");
+                    //System.out.println("Search all fields not yet implemented.");
+                    printJobs(JobData.findByValue(searchTerm));
                 } else {
                     printJobs(JobData.findByColumnAndValue(searchField, searchTerm));
                 }
@@ -110,7 +111,28 @@ public class TechJobs {
 
     // Print a list of jobs
     private static void printJobs(ArrayList<HashMap<String, String>> someJobs) {
+        if (someJobs.isEmpty()) {
+            System.out.println("no results");
+        }
+        else {
+            for (HashMap i : someJobs) {
+                System.out.println("");
+                System.out.println("*****");
+                    for (Object key : i.keySet()) {
+                        System.out.println(key+": "+i.get(key));
 
-        System.out.println("printJobs is not implemented yet");
+                }
+                //System.out.println("*****");
+                //System.out.println("position type: "+i.get("position type"));
+                //System.out.println("name: "+i.get("name"));
+                //System.out.println("employer: "+i.get("employer"));
+                //System.out.println("location: "+i.get("location"));
+                //System.out.println("core competency: "+i.get("core competency"));
+                //System.out.println("*****");
+
+            }
+        }
+
+       //System.out.println("printJobs is not implemented yet");
     }
 }
